@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomePageController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello ! ✅</h1>
+    <div>Total : </div>
+    <ul>
+        {% for account in app.user.accounts %}
+            <li>{{ account.name}}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ path("app_account") }}"> Add New account ➕</a>
+    {# <a href="{{ path("app_account_transfer")}}">Transfert</a>  #}
+</div>
+{% endblock %}
+ 
